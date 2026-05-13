@@ -11,3 +11,16 @@ The system is built on the robust **CloudSim Plus** framework, extending its cor
 - **Datacenter and Hosts:** Simulates a physical datacenter with multiple hosts, tracking CPU, RAM utilization, and energy consumption dynamically.
 - **Virtual Machines (VMs):** Handles execution environments for incoming tasks with Space-Shared scheduling.
 - **ML Scheduler Broker:** Replaces standard heuristic schedulers. It communicates with an external Machine Learning inference API (served via FastAPI on Hugging Face) to retrieve predictions on task execution before making allocation decisions.
+
+## Machine Learning-Driven Scheduling Strategy
+The traditional scheduling algorithm assigns tasks without prior knowledge of their likely execution duration or probability of failure, often leading to unoptimized resource usage. This project solves this by using predictive models.
+
+### Risk-Aware P90 Scheduler
+The simulation includes an uncertainty-aware scheduler that utilizes quantile regression. Specifically, it requests the **P90 (90th percentile)** execution prediction from the machine learning model. This ensures that the scheduler provisions enough resources and sets appropriate priority levels even for tasks that have a high variance in their execution times, thereby acting as a risk-aware mechanism.
+
+### Supported ML Models
+The framework currently integrates with multiple trained models to predict task behavior, including:
+- LightGBM (Default)
+- Logistic Regression
+- Random Forest
+- XGBoost
