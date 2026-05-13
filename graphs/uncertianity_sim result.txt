@@ -1,0 +1,12 @@
+=============== SUMMARY METRICS ===============
+Total tasks:           10000
+Completed on time:     9466  (ran and met SLA)
+SLA violations:        534  (ran but exceeded threshold)
+Failures:              0  (never executed)
+SLA violation %:       5.3400
+failure rate %:        0.0000
+Average waiting time:  4.1503
+Energy (kWh):          0.542952
+Avg CPU utilization:   0.0112
+Simulation time:       1326.8600
+Makespan:              1326.9600
