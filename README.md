@@ -39,3 +39,16 @@ Based on a test load of **10,000 tasks**, the metrics are as follows:
 | **Simulation Time** | 1696.41 s | 1326.86 s | **-21.8%** |
 
 The Uncertainty-Aware simulation accurately provisions resources, significantly dropping SLA violations and minimizing task wait times. This is visually represented in the project's generated graphical output under the `graphs/` directory.
+
+## Project Structure
+- `src/main/java/org/cloudsim_ml/` - Contains the Traditional CloudSim Plus scheduling logic.
+- `src/main/java/org/cloudsim_uncertainty/` - Contains the Uncertainty-Aware ML framework (P90 Scheduler).
+- `cloud-ml-uncertainity.ipynb` & `cloud-simulation-model (2).ipynb` - Jupyter notebooks containing machine learning model training and dataset preparation.
+- `graphs/` - Evaluation charts, comparative architecture diagrams, and simulation result logs.
+- `borg_traces_data.csv` - The processed Google trace dataset utilized during simulation.
+
+## How to Run
+1. Ensure Java is installed in your environment.
+2. The project relies on external ML inference. Before running, configure the `HF_PREDICT_URL` and `HF_TOKEN` environment variables to point to your FastAPI inference server.
+3. Execute `MainUncertaintySimulation.java` for the ML-driven simulation.
+4. Execute `MainSimulation.java` for the traditional baseline comparison.
