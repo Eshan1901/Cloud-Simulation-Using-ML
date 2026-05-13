@@ -24,3 +24,18 @@ The framework currently integrates with multiple trained models to predict task 
 - Logistic Regression
 - Random Forest
 - XGBoost
+
+## Simulation Results & Comparative Analysis
+The graphs and results generated from the simulation clearly demonstrate the advantage of the ML-driven approach over traditional cloud scheduling. 
+
+Based on a test load of **10,000 tasks**, the metrics are as follows:
+
+| Metric | Traditional CloudSim | Uncertainty-Aware ML Sim | Improvement |
+| :--- | :--- | :--- | :--- |
+| **Completed on time** | 6,509 | 9,466 | **+45.4%** |
+| **SLA Violations** | 3,491 (34.91%) | 534 (5.34%) | **-84.7%** |
+| **Average Waiting Time** | 25.73 units | 4.15 units | **-83.8%** |
+| **Energy Consumption** | 0.696 kWh | 0.543 kWh | **-22.0%** |
+| **Simulation Time** | 1696.41 s | 1326.86 s | **-21.8%** |
+
+The Uncertainty-Aware simulation accurately provisions resources, significantly dropping SLA violations and minimizing task wait times. This is visually represented in the project's generated graphical output under the `graphs/` directory.
